@@ -3,9 +3,12 @@
 ## 一、 用命令行窗口显示小车的IMU和里程计（odometry）数据
 ### 1. imu_topic
 * `rosbag play all.bag`播放数据包数据
-* `rostopic list`查看现有topic
-* `rostopic info /imu/data_raw`和`rostopic info /odom`分别查看消息类型
-* `rosmsg show snesor_msgs/Imu`和`rosmsg show nav_msgs/Odometry`查看消息内容
+* `rostopic list`查看现有topic\
+  ![](1.png)
+* `rostopic info /imu/data_raw`查看消息类型\
+  ![](2.png)
+* `rosmsg show snesor_msgs/Imu`查看消息内容\
+  ![](3.png)
 * 编写`imu_topic`订阅函数
   ```C++
     #include <iostream>
@@ -47,10 +50,14 @@
         return 0;
     }
   ```
-* 运行结果
+* 运行结果\
+  ![](4.png)
+
 ### 2. odom_topic
-* `rostopic info /odom`查看消息类型
-* `rosmsg show nav_msgs/Odometry`查看消息内容
+* `rostopic info /odom`查看消息类型\
+  ![](5.png)
+* `rosmsg show nav_msgs/Odometry`查看消息内容\
+  ![](6.png)
 * 编写`odom_topic`订阅函数
   ```C++
     #include <iostream>
@@ -83,7 +90,6 @@
         std::cout << "    float64 z: " << msg->twist.twist.angular.z << std::endl;
     }
 
-
     int main(int argc, char** argv)
     {
         ros::init(argc, argv, "odom_topic");  // 初始化ROS节点
@@ -98,11 +104,18 @@
     }
 
   ```
-* 运行结果
+* 运行结果\
+  ![](7.png)
+
 ## 二、 用图形界面显示颜色相机和深度相机的数据（利用OpenCV库）
 ### 1. color_image
 * 安装openCV库
-* `rostopic info /camera/color/image_raw`查看消息类型
+  ```C++
+  sudo apt-get update
+  sudo apt-get install libopencv-dev
+  ```
+* `rostopic info /camera/color/image_raw`查看消息类型\
+  ![](8.png)
 * 编写`color_image`订阅函数
   ```C++
     #include <ros/ros.h>
@@ -154,9 +167,12 @@
         return 0;
     }
   ```
-* 运行结果
+* 运行结果\
+  ![](9.png)
+
 ### 2. depth_image
-* `rostopic info /camera/depth/image_rect_raw`查看消息类型
+* `rostopic info /camera/depth/image_rect_raw`查看消息类型\
+  ![](10.png)
 * 编写`depth_image`订阅函数
   ```C++
     #include <ros/ros.h>
@@ -207,9 +223,15 @@
         return 0;
     }
   ```
+* 运行结果\
+  ![](11.png)
 ## 三、 用图形界面显示激光雷达的点云数据（利用PCL库）
 * 安装PCL库
-* `rostopic info /rslidar_points`查看消息类型
+  ```C++
+  sudo apt-get install libpcl-dev
+  ```
+* `rostopic info /rslidar_points`查看消息类型\
+  ![](12.png)
 * 编写订阅函数
   ```C++
     #include <ros/ros.h>
@@ -252,4 +274,5 @@
         return 0;
     }
   ```
-* 运行结果
+* 运行结果\
+ ![](13.png)
