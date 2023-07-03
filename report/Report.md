@@ -1,6 +1,7 @@
 # ROS数据展示系统
 
-<iframe src="//player.bilibili.com/player.html?aid=360460132&bvid=BV1SX4y1n7Jc&cid=1182920624&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+* [bilibili展示视频](https://www.bilibili.com/video/BV1SX4y1n7Jc/?share_source=copy_web&vd_source=a00a1bf65e172d1e96191b4478c5756e)
+* [Github源代码](https://github.com/Deicedmilktea/ROSDateDisplay)
 
 ## 一、 用命令行窗口显示小车的IMU和里程计（odometry）数据
 ### 1. imu_topic
