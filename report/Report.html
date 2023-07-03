@@ -1,0 +1,622 @@
+<!DOCTYPE html><html><head>
+      <title>Report</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Reeve Ni\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="ros%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E7%B3%BB%E7%BB%9F">ROS&#x6570;&#x636E;&#x5C55;&#x793A;&#x7CFB;&#x7EDF;</h1>
+
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1SX4y1n7Jc/?share_source=copy_web&amp;vd_source=a00a1bf65e172d1e96191b4478c5756e">bilibili&#x5C55;&#x793A;&#x89C6;&#x9891;</a></li>
+<li><a href="https://github.com/Deicedmilktea/ROSDateDisplay">Github&#x6E90;&#x4EE3;&#x7801;</a></li>
+</ul>
+<h2 class="mume-header" id="%E4%B8%80--%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AA%97%E5%8F%A3%E6%98%BE%E7%A4%BA%E5%B0%8F%E8%BD%A6%E7%9A%84imu%E5%92%8C%E9%87%8C%E7%A8%8B%E8%AE%A1odometry%E6%95%B0%E6%8D%AE">&#x4E00;&#x3001; &#x7528;&#x547D;&#x4EE4;&#x884C;&#x7A97;&#x53E3;&#x663E;&#x793A;&#x5C0F;&#x8F66;&#x7684;IMU&#x548C;&#x91CC;&#x7A0B;&#x8BA1;&#xFF08;odometry&#xFF09;&#x6570;&#x636E;</h2>
+
+<h3 class="mume-header" id="1-imu_topic">1. imu_topic</h3>
+
+<ul>
+<li><code>rosbag play all.bag</code>&#x64AD;&#x653E;&#x6570;&#x636E;&#x5305;&#x6570;&#x636E;</li>
+<li><code>rostopic list</code>&#x67E5;&#x770B;&#x73B0;&#x6709;topic<br>
+<img src="1.png" alt></li>
+<li><code>rostopic info /imu/data_raw</code>&#x67E5;&#x770B;&#x6D88;&#x606F;&#x7C7B;&#x578B;<br>
+<img src="2.png" alt></li>
+<li><code>rosmsg show snesor_msgs/Imu</code>&#x67E5;&#x770B;&#x6D88;&#x606F;&#x5185;&#x5BB9;<br>
+<img src="3.png" alt></li>
+<li>&#x7F16;&#x5199;<code>imu_topic</code>&#x8BA2;&#x9605;&#x51FD;&#x6570;<pre data-role="codeBlock" data-info="C++" class="language-cpp">  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ros/ros.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sensor_msgs/Imu.h&gt;</span></span>
+
+  <span class="token keyword keyword-void">void</span> <span class="token function">imuCallback</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> sensor_msgs<span class="token double-colon punctuation">::</span>Imu<span class="token double-colon punctuation">::</span>ConstPtr<span class="token operator">&amp;</span> msg<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+      <span class="token comment">// &#x5904;&#x7406;IMU&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x5730;&#x6253;&#x5370;&#x6570;&#x636E;&#x5230;&#x547D;&#x4EE4;&#x884C;</span>
+      std<span class="token double-colon punctuation">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Received Header data: &quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    uint32 seq: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>header<span class="token punctuation">.</span>seq <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    time stamp: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>header<span class="token punctuation">.</span>stamp <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    string frame_id: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>header<span class="token punctuation">.</span>frame_id <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Received IMU data: orientation (x, y, z)&quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 x: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>orientation<span class="token punctuation">.</span>x <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 y: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>orientation<span class="token punctuation">.</span>y <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 z: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>orientation<span class="token punctuation">.</span>z <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 w: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>orientation<span class="token punctuation">.</span>w <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Received IMU data: angular velocity (x, y, z)&quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 x: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>angular_velocity<span class="token punctuation">.</span>x <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 y: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>angular_velocity<span class="token punctuation">.</span>y <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 z: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>angular_velocity<span class="token punctuation">.</span>z <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Received IMU data: linear acceleration (x, y, z)&quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 x: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>linear_acceleration<span class="token punctuation">.</span>x <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 y: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>linear_acceleration<span class="token punctuation">.</span>y <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 z: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>linear_acceleration<span class="token punctuation">.</span>z <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> argc<span class="token punctuation">,</span> <span class="token keyword keyword-char">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+      ros<span class="token double-colon punctuation">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">&quot;imu_topic&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// &#x521D;&#x59CB;&#x5316;ROS&#x8282;&#x70B9;</span>
+      ros<span class="token double-colon punctuation">::</span>NodeHandle nh<span class="token punctuation">;</span>  <span class="token comment">// &#x521B;&#x5EFA;&#x8282;&#x70B9;&#x53E5;&#x67C4;</span>
+
+      <span class="token comment">// &#x521B;&#x5EFA;&#x8BA2;&#x9605;&#x5668;&#xFF0C;&#x8BA2;&#x9605;IMU&#x548C;&#x91CC;&#x7A0B;&#x8BA1;&#x4E3B;&#x9898;</span>
+      ros<span class="token double-colon punctuation">::</span>Subscriber imu_sub <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">&quot;/imu/data_raw&quot;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> imuCallback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      ros<span class="token double-colon punctuation">::</span><span class="token function">spin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// &#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x63A5;&#x6536;ROS&#x6D88;&#x606F;</span>
+
+      <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</pre></li>
+<li>&#x8FD0;&#x884C;&#x7ED3;&#x679C;<br>
+<img src="4.png" alt></li>
+</ul>
+<h3 class="mume-header" id="2-odom_topic">2. odom_topic</h3>
+
+<ul>
+<li><code>rostopic info /odom</code>&#x67E5;&#x770B;&#x6D88;&#x606F;&#x7C7B;&#x578B;<br>
+<img src="5.png" alt></li>
+<li><code>rosmsg show nav_msgs/Odometry</code>&#x67E5;&#x770B;&#x6D88;&#x606F;&#x5185;&#x5BB9;<br>
+<img src="6.png" alt></li>
+<li>&#x7F16;&#x5199;<code>odom_topic</code>&#x8BA2;&#x9605;&#x51FD;&#x6570;<pre data-role="codeBlock" data-info="C++" class="language-cpp">  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ros/ros.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;nav_msgs/Odometry.h&gt;</span></span>
+
+  <span class="token keyword keyword-void">void</span> <span class="token function">imuCallback</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> nav_msgs<span class="token double-colon punctuation">::</span>Odometry<span class="token double-colon punctuation">::</span>ConstPtr<span class="token operator">&amp;</span> msg<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+      <span class="token comment">// &#x5904;&#x7406;IMU&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x5730;&#x6253;&#x5370;&#x6570;&#x636E;&#x5230;&#x547D;&#x4EE4;&#x884C;</span>
+      std<span class="token double-colon punctuation">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Received Header data: &quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    uint32 seq: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>header<span class="token punctuation">.</span>seq <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    time stamp: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>header<span class="token punctuation">.</span>stamp <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    string frame_id: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>header<span class="token punctuation">.</span>frame_id <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Received ODOM data: Point point (x, y, z)&quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 x: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>pose<span class="token punctuation">.</span>pose<span class="token punctuation">.</span>position<span class="token punctuation">.</span>x <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 y: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>pose<span class="token punctuation">.</span>pose<span class="token punctuation">.</span>position<span class="token punctuation">.</span>y <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 z: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>pose<span class="token punctuation">.</span>pose<span class="token punctuation">.</span>position<span class="token punctuation">.</span>z <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Received ODOM data: Quaternion orientation (x, y, z, w)&quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 x: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>pose<span class="token punctuation">.</span>pose<span class="token punctuation">.</span>orientation<span class="token punctuation">.</span>x <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 y: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>pose<span class="token punctuation">.</span>pose<span class="token punctuation">.</span>orientation<span class="token punctuation">.</span>y <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 z: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>pose<span class="token punctuation">.</span>pose<span class="token punctuation">.</span>orientation<span class="token punctuation">.</span>z <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 w: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>pose<span class="token punctuation">.</span>pose<span class="token punctuation">.</span>orientation<span class="token punctuation">.</span>w <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Received ODOM data: linear (x, y, z)&quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 x: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>twist<span class="token punctuation">.</span>twist<span class="token punctuation">.</span>linear<span class="token punctuation">.</span>x <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 y: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>twist<span class="token punctuation">.</span>twist<span class="token punctuation">.</span>linear<span class="token punctuation">.</span>y <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 z: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>twist<span class="token punctuation">.</span>twist<span class="token punctuation">.</span>linear<span class="token punctuation">.</span>z <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Received ODOM data: angular (x, y, z)&quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 x: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>twist<span class="token punctuation">.</span>twist<span class="token punctuation">.</span>angular<span class="token punctuation">.</span>x <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 y: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>twist<span class="token punctuation">.</span>twist<span class="token punctuation">.</span>angular<span class="token punctuation">.</span>y <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+      std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;    float64 z: &quot;</span> <span class="token operator">&lt;&lt;</span> msg<span class="token operator">-&gt;</span>twist<span class="token punctuation">.</span>twist<span class="token punctuation">.</span>angular<span class="token punctuation">.</span>z <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> argc<span class="token punctuation">,</span> <span class="token keyword keyword-char">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+      ros<span class="token double-colon punctuation">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">&quot;odom_topic&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// &#x521D;&#x59CB;&#x5316;ROS&#x8282;&#x70B9;</span>
+      ros<span class="token double-colon punctuation">::</span>NodeHandle nh<span class="token punctuation">;</span>  <span class="token comment">// &#x521B;&#x5EFA;&#x8282;&#x70B9;&#x53E5;&#x67C4;</span>
+
+      <span class="token comment">// &#x521B;&#x5EFA;&#x8BA2;&#x9605;&#x5668;&#xFF0C;&#x8BA2;&#x9605;IMU&#x548C;&#x91CC;&#x7A0B;&#x8BA1;&#x4E3B;&#x9898;</span>
+      ros<span class="token double-colon punctuation">::</span>Subscriber odom_sub <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">&quot;/odom&quot;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> imuCallback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      ros<span class="token double-colon punctuation">::</span><span class="token function">spin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// &#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x63A5;&#x6536;ROS&#x6D88;&#x606F;</span>
+
+      <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+</pre></li>
+<li>&#x8FD0;&#x884C;&#x7ED3;&#x679C;<br>
+<img src="7.png" alt></li>
+</ul>
+<h2 class="mume-header" id="%E4%BA%8C--%E7%94%A8%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E6%98%BE%E7%A4%BA%E9%A2%9C%E8%89%B2%E7%9B%B8%E6%9C%BA%E5%92%8C%E6%B7%B1%E5%BA%A6%E7%9B%B8%E6%9C%BA%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%A9%E7%94%A8opencv%E5%BA%93">&#x4E8C;&#x3001; &#x7528;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x663E;&#x793A;&#x989C;&#x8272;&#x76F8;&#x673A;&#x548C;&#x6DF1;&#x5EA6;&#x76F8;&#x673A;&#x7684;&#x6570;&#x636E;&#xFF08;&#x5229;&#x7528;OpenCV&#x5E93;&#xFF09;</h2>
+
+<h3 class="mume-header" id="1-color_image">1. color_image</h3>
+
+<ul>
+<li>&#x5B89;&#x88C5;openCV&#x5E93;<pre data-role="codeBlock" data-info="C++" class="language-cpp">sudo apt<span class="token operator">-</span>get update
+sudo apt<span class="token operator">-</span>get install libopencv<span class="token operator">-</span>dev
+</pre></li>
+<li><code>rostopic info /camera/color/image_raw</code>&#x67E5;&#x770B;&#x6D88;&#x606F;&#x7C7B;&#x578B;<br>
+<img src="8.png" alt></li>
+<li>&#x7F16;&#x5199;<code>color_image</code>&#x8BA2;&#x9605;&#x51FD;&#x6570;<pre data-role="codeBlock" data-info="C++" class="language-cpp">  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ros/ros.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sensor_msgs/Image.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cv_bridge/cv_bridge.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/opencv.hpp&gt;</span></span>
+
+  cv<span class="token double-colon punctuation">::</span>Mat colorImage<span class="token punctuation">;</span>  <span class="token comment">// &#x5B58;&#x50A8;&#x989C;&#x8272;&#x76F8;&#x673A;&#x56FE;&#x50CF;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;</span>
+
+  <span class="token keyword keyword-void">void</span> <span class="token function">colorImageCallback</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> sensor_msgs<span class="token double-colon punctuation">::</span>ImageConstPtr<span class="token operator">&amp;</span> msg<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5C06;ROS&#x56FE;&#x50CF;&#x6D88;&#x606F;&#x8F6C;&#x6362;&#x4E3A;OpenCV&#x56FE;&#x50CF;</span>
+    <span class="token keyword keyword-try">try</span>
+    <span class="token punctuation">{</span>
+        colorImage <span class="token operator">=</span> cv_bridge<span class="token double-colon punctuation">::</span><span class="token function">toCvCopy</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span> sensor_msgs<span class="token double-colon punctuation">::</span>image_encodings<span class="token double-colon punctuation">::</span>BGR8<span class="token punctuation">)</span><span class="token operator">-&gt;</span>image<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-catch">catch</span> <span class="token punctuation">(</span>cv_bridge<span class="token double-colon punctuation">::</span>Exception<span class="token operator">&amp;</span> e<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">ROS_ERROR</span><span class="token punctuation">(</span><span class="token string">&quot;cv_bridge exception: %s&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span><span class="token function">what</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+
+  <span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> argc<span class="token punctuation">,</span> <span class="token keyword keyword-char">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    ros<span class="token double-colon punctuation">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">&quot;color_image&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token double-colon punctuation">::</span>NodeHandle nh<span class="token punctuation">;</span>
+
+    ros<span class="token double-colon punctuation">::</span>Subscriber colorImageSub <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">&quot;/camera/color/image_raw&quot;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> colorImageCallback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    cv<span class="token double-colon punctuation">::</span><span class="token function">namedWindow</span><span class="token punctuation">(</span><span class="token string">&quot;Color Image&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    ros<span class="token double-colon punctuation">::</span>Rate <span class="token function">loop_rate</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span>ros<span class="token double-colon punctuation">::</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        ros<span class="token double-colon punctuation">::</span><span class="token function">spinOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// &#x663E;&#x793A;&#x989C;&#x8272;&#x76F8;&#x673A;&#x56FE;&#x50CF;</span>
+        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>colorImage<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+        cv<span class="token double-colon punctuation">::</span><span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">&quot;Color Image&quot;</span><span class="token punctuation">,</span> colorImage<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        cv<span class="token double-colon punctuation">::</span><span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        loop_rate<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+        <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</pre></li>
+<li>&#x8FD0;&#x884C;&#x7ED3;&#x679C;<br>
+<img src="9.png" alt></li>
+</ul>
+<h3 class="mume-header" id="2-depth_image">2. depth_image</h3>
+
+<ul>
+<li><code>rostopic info /camera/depth/image_rect_raw</code>&#x67E5;&#x770B;&#x6D88;&#x606F;&#x7C7B;&#x578B;<br>
+<img src="10.png" alt></li>
+<li>&#x7F16;&#x5199;<code>depth_image</code>&#x8BA2;&#x9605;&#x51FD;&#x6570;<pre data-role="codeBlock" data-info="C++" class="language-cpp">  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ros/ros.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sensor_msgs/Image.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cv_bridge/cv_bridge.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/opencv.hpp&gt;</span></span>
+  cv<span class="token double-colon punctuation">::</span>Mat depthImage<span class="token punctuation">;</span>  <span class="token comment">// &#x5B58;&#x50A8;&#x6DF1;&#x5EA6;&#x76F8;&#x673A;&#x56FE;&#x50CF;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;</span>
+
+
+  <span class="token keyword keyword-void">void</span> <span class="token function">depthImageCallback</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> sensor_msgs<span class="token double-colon punctuation">::</span>ImageConstPtr<span class="token operator">&amp;</span> msg<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5C06;ROS&#x56FE;&#x50CF;&#x6D88;&#x606F;&#x8F6C;&#x6362;&#x4E3A;OpenCV&#x56FE;&#x50CF;</span>
+    <span class="token keyword keyword-try">try</span>
+    <span class="token punctuation">{</span>
+        depthImage <span class="token operator">=</span> cv_bridge<span class="token double-colon punctuation">::</span><span class="token function">toCvCopy</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span> sensor_msgs<span class="token double-colon punctuation">::</span>image_encodings<span class="token double-colon punctuation">::</span>TYPE_32FC1<span class="token punctuation">)</span><span class="token operator">-&gt;</span>image<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-catch">catch</span> <span class="token punctuation">(</span>cv_bridge<span class="token double-colon punctuation">::</span>Exception<span class="token operator">&amp;</span> e<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">ROS_ERROR</span><span class="token punctuation">(</span><span class="token string">&quot;cv_bridge exception: %s&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span><span class="token function">what</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> argc<span class="token punctuation">,</span> <span class="token keyword keyword-char">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    ros<span class="token double-colon punctuation">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">&quot;depth_image&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token double-colon punctuation">::</span>NodeHandle nh<span class="token punctuation">;</span>
+
+    ros<span class="token double-colon punctuation">::</span>Subscriber depthImageSub <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">&quot;/camera/depth/image_rect_raw&quot;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> depthImageCallback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    cv<span class="token double-colon punctuation">::</span><span class="token function">namedWindow</span><span class="token punctuation">(</span><span class="token string">&quot;Depth Image&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    ros<span class="token double-colon punctuation">::</span>Rate <span class="token function">loop_rate</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span>ros<span class="token double-colon punctuation">::</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        ros<span class="token double-colon punctuation">::</span><span class="token function">spinOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// &#x663E;&#x793A;&#x6DF1;&#x5EA6;&#x76F8;&#x673A;&#x56FE;&#x50CF;</span>
+        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>depthImage<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+        cv<span class="token double-colon punctuation">::</span><span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">&quot;Depth Image&quot;</span><span class="token punctuation">,</span> depthImage<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        cv<span class="token double-colon punctuation">::</span><span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        loop_rate<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+      <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</pre></li>
+<li>&#x8FD0;&#x884C;&#x7ED3;&#x679C;<br>
+<img src="11.png" alt></li>
+</ul>
+<h2 class="mume-header" id="%E4%B8%89--%E7%94%A8%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E6%98%BE%E7%A4%BA%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%9A%84%E7%82%B9%E4%BA%91%E6%95%B0%E6%8D%AE%E5%88%A9%E7%94%A8pcl%E5%BA%93">&#x4E09;&#x3001; &#x7528;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x663E;&#x793A;&#x6FC0;&#x5149;&#x96F7;&#x8FBE;&#x7684;&#x70B9;&#x4E91;&#x6570;&#x636E;&#xFF08;&#x5229;&#x7528;PCL&#x5E93;&#xFF09;</h2>
+
+<ul>
+<li>&#x5B89;&#x88C5;PCL&#x5E93;<pre data-role="codeBlock" data-info="C++" class="language-cpp">sudo apt<span class="token operator">-</span>get install libpcl<span class="token operator">-</span>dev
+</pre></li>
+<li><code>rostopic info /rslidar_points</code>&#x67E5;&#x770B;&#x6D88;&#x606F;&#x7C7B;&#x578B;<br>
+<img src="12.png" alt></li>
+<li>&#x7F16;&#x5199;<code>point_cloud</code>&#x8BA2;&#x9605;&#x51FD;&#x6570;<pre data-role="codeBlock" data-info="C++" class="language-cpp">  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ros/ros.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sensor_msgs/PointCloud2.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;pcl/point_cloud.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;pcl_conversions/pcl_conversions.h&gt;</span></span>
+  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;pcl/visualization/pcl_visualizer.h&gt;</span></span>
+
+  pcl<span class="token double-colon punctuation">::</span>visualization<span class="token double-colon punctuation">::</span>PCLVisualizer<span class="token double-colon punctuation">::</span>Ptr <span class="token function">viewer</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> pcl<span class="token double-colon punctuation">::</span>visualization<span class="token double-colon punctuation">::</span><span class="token function">PCLVisualizer</span><span class="token punctuation">(</span><span class="token string">&quot;Point Cloud Viewer&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  pcl<span class="token double-colon punctuation">::</span>PointCloud<span class="token operator">&lt;</span>pcl<span class="token double-colon punctuation">::</span>PointXYZ<span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span>Ptr <span class="token function">cloud</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> pcl<span class="token double-colon punctuation">::</span>PointCloud<span class="token operator">&lt;</span>pcl<span class="token double-colon punctuation">::</span>PointXYZ<span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword keyword-void">void</span> <span class="token function">cloudCallback</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> sensor_msgs<span class="token double-colon punctuation">::</span>PointCloud2ConstPtr<span class="token operator">&amp;</span> cloud_msg<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+      <span class="token comment">// &#x5C06;ROS&#x6D88;&#x606F;&#x7684;&#x70B9;&#x4E91;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x4E3A;PCL&#x683C;&#x5F0F;</span>
+      pcl<span class="token double-colon punctuation">::</span><span class="token function">fromROSMsg</span><span class="token punctuation">(</span><span class="token operator">*</span>cloud_msg<span class="token punctuation">,</span> <span class="token operator">*</span>cloud<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// &#x66F4;&#x65B0;&#x70B9;&#x4E91;&#x6570;&#x636E;&#x5E76;&#x5237;&#x65B0;&#x53EF;&#x89C6;&#x5316;&#x754C;&#x9762;</span>
+      viewer<span class="token operator">-&gt;</span><span class="token function">updatePointCloud</span><span class="token punctuation">(</span>cloud<span class="token punctuation">,</span> <span class="token string">&quot;cloud&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      viewer<span class="token operator">-&gt;</span><span class="token function">spinOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> argc<span class="token punctuation">,</span> <span class="token keyword keyword-char">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+      <span class="token comment">// &#x521D;&#x59CB;&#x5316;ROS&#x8282;&#x70B9;</span>
+      ros<span class="token double-colon punctuation">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">&quot;pcl_display_node&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      ros<span class="token double-colon punctuation">::</span>NodeHandle nh<span class="token punctuation">;</span>
+
+      <span class="token comment">// &#x521B;&#x5EFA;PCL&#x53EF;&#x89C6;&#x5316;&#x5668;</span>
+      viewer<span class="token operator">-&gt;</span><span class="token function">setBackgroundColor</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;&#x70B9;&#x4E91;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x5230;&#x53EF;&#x89C6;&#x5316;&#x5668;&#x4E2D;&#x8FDB;&#x884C;&#x663E;&#x793A;</span>
+      viewer<span class="token operator">-&gt;</span><span class="token generic-function"><span class="token function">addPointCloud</span><span class="token generic class-name"><span class="token operator">&lt;</span>pcl<span class="token double-colon punctuation">::</span>PointXYZ<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>cloud<span class="token punctuation">,</span> <span class="token string">&quot;cloud&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// &#x8BA2;&#x9605;&#x70B9;&#x4E91;&#x6570;&#x636E;&#x7684;&#x8BDD;&#x9898;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+      ros<span class="token double-colon punctuation">::</span>Subscriber sub <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">&quot;/rslidar_points&quot;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> cloudCallback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// &#x5F00;&#x59CB;&#x81EA;&#x5FAA;&#x73AF;&#xFF08;&#x7B49;&#x5F85;&#x548C;&#x5904;&#x7406;ROS&#x6D88;&#x606F;&#xFF09;</span>
+      ros<span class="token double-colon punctuation">::</span><span class="token function">spin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</pre></li>
+<li>&#x8FD0;&#x884C;&#x7ED3;&#x679C;<br>
+<img src="13.png" alt></li>
+</ul>
+<h2>&#x56DB;&#x3001;&#x5229;&#x7528;SLAM&#x7684;Gmapping&#x7B97;&#x6CD5;&#x6784;&#x5EFA;&#x5730;&#x56FE;</h2>
+<ul>
+<li>&#x4E0B;&#x8F7D;Gmapping&#x5E93;<pre data-role="codeBlock" data-info class="language-"><code>  sudo apt-get update
+  sudo apt-get install ros-kinetic-gmapping
+</code></pre></li>
+<li>&#x7F16;&#x5199;<code>map_build</code>&#x8BA2;&#x9605;&#x51FD;&#x6570;<pre data-role="codeBlock" data-info="C++" class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;thread&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;opencv2/opencv.hpp&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;ros/ros.h&quot;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;nav_msgs/OccupancyGrid.h&quot;</span></span>
+
+<span class="token keyword keyword-void">void</span> <span class="token function">callback</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> nav_msgs<span class="token double-colon punctuation">::</span>OccupancyGrid<span class="token double-colon punctuation">::</span>ConstPtr<span class="token operator">&amp;</span> ptr<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>   
+    std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;resolution: &quot;</span> <span class="token operator">&lt;&lt;</span> ptr<span class="token operator">-&gt;</span>info<span class="token punctuation">.</span>resolution <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+    std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;width: &quot;</span> <span class="token operator">&lt;&lt;</span> ptr<span class="token operator">-&gt;</span>info<span class="token punctuation">.</span>width <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+    std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;height: &quot;</span> <span class="token operator">&lt;&lt;</span> ptr<span class="token operator">-&gt;</span>info<span class="token punctuation">.</span>height <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword keyword-double">double</span> scale <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-int">int</span> width <span class="token operator">=</span> <span class="token number">1200</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-int">int</span> height <span class="token operator">=</span> <span class="token number">1200</span><span class="token punctuation">;</span>
+    cv<span class="token double-colon punctuation">::</span>Point offset <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">-</span><span class="token number">1600</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1600</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    cv<span class="token double-colon punctuation">::</span>Mat map <span class="token operator">=</span> cv<span class="token double-colon punctuation">::</span><span class="token class-name">Mat</span><span class="token double-colon punctuation">::</span><span class="token function">zeros</span><span class="token punctuation">(</span>cv<span class="token double-colon punctuation">::</span><span class="token function">Size</span><span class="token punctuation">(</span>width<span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">,</span> CV_8UC3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> ptr<span class="token operator">-&gt;</span>info<span class="token punctuation">.</span>width <span class="token operator">*</span> ptr<span class="token operator">-&gt;</span>info<span class="token punctuation">.</span>height<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-int">int</span> x <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> ptr<span class="token operator">-&gt;</span>info<span class="token punctuation">.</span>width <span class="token operator">+</span> offset<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> scale<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">/</span> ptr<span class="token operator">-&gt;</span>info<span class="token punctuation">.</span>width <span class="token operator">+</span> offset<span class="token punctuation">.</span>y<span class="token punctuation">)</span> <span class="token operator">*</span> scale<span class="token punctuation">;</span>
+        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>ptr<span class="token operator">-&gt;</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            cv<span class="token double-colon punctuation">::</span><span class="token function">circle</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> cv<span class="token double-colon punctuation">::</span><span class="token function">Point</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> cv<span class="token double-colon punctuation">::</span><span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>ptr<span class="token operator">-&gt;</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;=</span> <span class="token number">80</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            cv<span class="token double-colon punctuation">::</span><span class="token function">circle</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> cv<span class="token double-colon punctuation">::</span><span class="token function">Point</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> cv<span class="token double-colon punctuation">::</span><span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token punctuation">{</span>
+            cv<span class="token double-colon punctuation">::</span><span class="token function">circle</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> cv<span class="token double-colon punctuation">::</span><span class="token function">Point</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> cv<span class="token double-colon punctuation">::</span><span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>    
+    <span class="token punctuation">}</span>
+    cv<span class="token double-colon punctuation">::</span><span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">&quot;map&quot;</span><span class="token punctuation">,</span> map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cv<span class="token double-colon punctuation">::</span><span class="token function">waitKey</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token function">LaunchGMapping</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">&quot;rosrun gmapping slam_gmapping&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> argc<span class="token punctuation">,</span> <span class="token keyword keyword-char">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    std<span class="token double-colon punctuation">::</span>thread <span class="token function">gm</span><span class="token punctuation">(</span>LaunchGMapping<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token double-colon punctuation">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">&quot;show_map&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token double-colon punctuation">::</span>NodeHandle nodeHandle<span class="token punctuation">;</span>
+    ros<span class="token double-colon punctuation">::</span>Subscriber subscriber <span class="token operator">=</span> nodeHandle<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">&quot;/map&quot;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> callback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// &#x521B;&#x5EFA;&#x53EF;&#x79FB;&#x52A8;&#x548C;&#x53EF;&#x8C03;&#x6574;&#x5927;&#x5C0F;&#x7684;&#x7A97;&#x53E3;</span>
+    cv<span class="token double-colon punctuation">::</span><span class="token function">namedWindow</span><span class="token punctuation">(</span><span class="token string">&quot;map&quot;</span><span class="token punctuation">,</span> cv<span class="token double-colon punctuation">::</span>WINDOW_NORMAL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cv<span class="token double-colon punctuation">::</span><span class="token function">resizeWindow</span><span class="token punctuation">(</span><span class="token string">&quot;map&quot;</span><span class="token punctuation">,</span> <span class="token number">800</span><span class="token punctuation">,</span> <span class="token number">600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    ros<span class="token double-colon punctuation">::</span><span class="token function">spin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// &#x9500;&#x6BC1;&#x7A97;&#x53E3;</span>
+    cv<span class="token double-colon punctuation">::</span><span class="token function">destroyWindow</span><span class="token punctuation">(</span><span class="token string">&quot;map&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre></li>
+<li>&#x8FD0;&#x884C;&#x7ED3;&#x679C;<br>
+<img src="14.png" alt></li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

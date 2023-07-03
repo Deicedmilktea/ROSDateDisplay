@@ -130,44 +130,44 @@
 
     void colorImageCallback(const sensor_msgs::ImageConstPtr& msg)
     {
-    // 将ROS图像消息转换为OpenCV图像
-    try
-    {
-        colorImage = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8)->image;
-    }
-    catch (cv_bridge::Exception& e)
-    {
-        ROS_ERROR("cv_bridge exception: %s", e.what());
-    }
+      // 将ROS图像消息转换为OpenCV图像
+      try
+      {
+          colorImage = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8)->image;
+      }
+      catch (cv_bridge::Exception& e)
+      {
+          ROS_ERROR("cv_bridge exception: %s", e.what());
+      }
     }
 
 
     int main(int argc, char** argv)
     {
-    ros::init(argc, argv, "color_image");
-    ros::NodeHandle nh;
+      ros::init(argc, argv, "color_image");
+      ros::NodeHandle nh;
 
-    ros::Subscriber colorImageSub = nh.subscribe("/camera/color/image_raw", 1000, colorImageCallback);
+      ros::Subscriber colorImageSub = nh.subscribe("/camera/color/image_raw", 1000, colorImageCallback);
 
-    cv::namedWindow("Color Image");
+      cv::namedWindow("Color Image");
 
-    ros::Rate loop_rate(10);
+      ros::Rate loop_rate(10);
 
-    while (ros::ok())
-    {
-        ros::spinOnce();
+      while (ros::ok())
+      {
+          ros::spinOnce();
 
-        // 显示颜色相机图像
-        if (!colorImage.empty())
-        {
-        cv::imshow("Color Image", colorImage);
-        }
+          // 显示颜色相机图像
+          if (!colorImage.empty())
+          {
+          cv::imshow("Color Image", colorImage);
+          }
 
-        cv::waitKey(1);
-        loop_rate.sleep();
-    }
+          cv::waitKey(1);
+          loop_rate.sleep();
+      }
 
-        return 0;
+          return 0;
     }
   ```
 * 运行结果\
@@ -187,41 +187,41 @@
 
     void depthImageCallback(const sensor_msgs::ImageConstPtr& msg)
     {
-    // 将ROS图像消息转换为OpenCV图像
-    try
-    {
-        depthImage = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::TYPE_32FC1)->image;
-    }
-    catch (cv_bridge::Exception& e)
-    {
-        ROS_ERROR("cv_bridge exception: %s", e.what());
-    }
+      // 将ROS图像消息转换为OpenCV图像
+      try
+      {
+          depthImage = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::TYPE_32FC1)->image;
+      }
+      catch (cv_bridge::Exception& e)
+      {
+          ROS_ERROR("cv_bridge exception: %s", e.what());
+      }
     }
 
     int main(int argc, char** argv)
     {
-    ros::init(argc, argv, "depth_image");
-    ros::NodeHandle nh;
+      ros::init(argc, argv, "depth_image");
+      ros::NodeHandle nh;
 
-    ros::Subscriber depthImageSub = nh.subscribe("/camera/depth/image_rect_raw", 1000, depthImageCallback);
+      ros::Subscriber depthImageSub = nh.subscribe("/camera/depth/image_rect_raw", 1000, depthImageCallback);
 
-    cv::namedWindow("Depth Image");
+      cv::namedWindow("Depth Image");
 
-    ros::Rate loop_rate(10);
+      ros::Rate loop_rate(10);
 
-    while (ros::ok())
-    {
-        ros::spinOnce();
+      while (ros::ok())
+      {
+          ros::spinOnce();
 
-        // 显示深度相机图像
-        if (!depthImage.empty())
-        {
-        cv::imshow("Depth Image", depthImage);
-        }
+          // 显示深度相机图像
+          if (!depthImage.empty())
+          {
+          cv::imshow("Depth Image", depthImage);
+          }
 
-        cv::waitKey(1);
-        loop_rate.sleep();
-    }
+          cv::waitKey(1);
+          loop_rate.sleep();
+      }
 
         return 0;
     }
